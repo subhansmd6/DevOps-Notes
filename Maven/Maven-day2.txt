@@ -1,0 +1,32 @@
+MAVEN THROUGH TERMINAL:-
+
+*Install the maven jar file after verifying the signature
+*After installing the maven check its version from ubuntu terminal by using the below command 
+  			mvn -version
+
+mvn archetype:generate -DgroupId=com.example -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+
+
+MAVEN LIFECYCLE PHASES(8)
+
+VALIDATE:- Check if the projects is correct having all the necessary information
+			mvn validate
+COMPILE:- Compile the source code of project
+			mvn compile
+TEST :- Test the compiled source code using suitable unit testing framework these tests should not require the code be packaged  	or deployed
+			mvn test
+PACKAGE:- Take the compiled code and package in it distributable format such as JAR
+			mnv package
+INTEGRATION:-Process and deploy the package into an environment where integration tests can be run
+			mvn integration test
+VERIFY:- Run any checks to verify the package
+			mvn install
+INSTALL:- Install the package into the local repository for use as a dependency in other projects locally
+			mvn install
+DEPLOY:- Done in an integration or release environment copies the final package to the remote repository for sharing with other developers and projects 
+			mvn deploy
+*** .m2 folder It is a repository of apache maven
+
+*** Apache maven has an advantage that is when we run any of the life cycle phases which will also include previous phases as well .
+ex:- if we run mvn package  (which is fourth phase ) which is run previous phases as well (validate , compile, test ) 
