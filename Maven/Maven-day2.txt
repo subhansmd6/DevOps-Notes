@@ -4,7 +4,8 @@ MAVEN THROUGH TERMINAL:-
 *After installing the maven check its version from ubuntu terminal by using the below command 
   			mvn -version
 
-mvn archetype:generate -DgroupId=com.example -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+mvn archetype:generate -DgroupId=com.example -DartifactId=helloworld -DarchetypeArtifactId=maven-archetype-quickstart 
+-DinteractiveMode=false
 
 
 
@@ -14,7 +15,7 @@ VALIDATE:- Check if the projects is correct having all the necessary information
 			mvn validate
 COMPILE:- Compile the source code of project
 			mvn compile
-TEST :- Test the compiled source code using suitable unit testing framework these tests should not require the code be packaged  	or deployed
+TEST :- Test the compiled source code using suitable unit testing framework these tests should not require the code be packaged or deployed
 			mvn test
 PACKAGE:- Take the compiled code and package in it distributable format such as JAR
 			mnv package
