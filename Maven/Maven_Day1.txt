@@ -36,7 +36,7 @@
 
 	•	Maven relies  on build life-cycle to define the process of building and distributing artifacts (eg jar file, war file) 
 
-4] There are three types of build in build life-cycle 
+4] There are three types of built-in build life-cycle 
 
 	•	Default -Handles project and deployment 
 
@@ -134,11 +134,17 @@ How to install java
 	• Select windows and select 64 Installer click on the link 
 	• so after clicking on the link the java jdk will be download it into your local machine 
           it will download into a c drive in local machine 
+
           open the c drive go to program file then go to java and then click on jdk and select and copy the path 
-          After selecting the path go to edit the system environment variables then click on ev select new gave variable name as JAVA_HOME and that path which you have copied from the jdk
+          After selecting the path go to edit the system environment variables then click on edit, select new gave 
+          variable name as JAVA_HOME and that path which you have copied from the jdk
+
           Select Path in variable path then click on edit then click on new paste the jdk path here also 
           ckeck on command prompt search java -version then it will show you what version you have download 
-  
+
+	  open the c drive go to program file then go to Maven and then click on Maven and select and copy the path 
+          After selecting the path go to edit the system environment variables then click on edit, select new gave 
+          variable name as MAVEN_HOME and that path which you have copied from the Maven in local system.
 
 
 
