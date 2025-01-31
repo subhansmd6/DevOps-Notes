@@ -7,6 +7,8 @@ Accessing Apache Tomcat GUI:
 3. Add the following user details (ensure lines are uncommented):
    --> in tomcat-users.xml
    --> username="admin" password="<new_password>" roles="manager-gui,admin-gui"/
+
+-- > Restart Tomcat to apply the changes.
    
 4. Restart Tomcat and access:
    
@@ -17,6 +19,8 @@ Deploying from Maven Project:
 --> Copy the artifact ('.war' file) from the Maven project's target folder to the Tomcat 'webapps' folder:
 
 --> cp <source> <destination>
+--> We can also upload the artifactory directly to Tomcat server by clicking 'Manager apps' and uploading the 
+    artifactory (.war, .jar) files from the local system
 
-- Restart Tomcat to apply the change
+
 
