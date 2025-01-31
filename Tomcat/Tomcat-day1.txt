@@ -18,7 +18,8 @@ Installation Steps
    --> If downloading the Windows'zip file', extract it using "Extract All" option.
    --> Navigate to the unzipped Apache Tomcat folder.
 
-How to Start and Stop Apache Tomcat:
+Apache Tomcat Structure:
+========================
 --> Start Tomcat: Apache Tomcat -> bin -> startup (Windows batch file)
 
 --> Stop/Shutdown Tomcat: Apache Tomcat -> bin -> shutdown (Windows batch file)
