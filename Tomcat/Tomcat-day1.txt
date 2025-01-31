@@ -31,6 +31,9 @@ Apache Tomcat Structure:
   <Connector port="8080" protocol="HTTP/1.1"
       connectionTimeout="20000"
       redirectPort="8443"/>
+  --> First, stop the Tomcat server.
+  --> Change the port number in 'server.xml'.
+  --> Restart Tomcat to apply changes.
 
 --> For Hosting an Application: Deploy artifacts (WAR files) in -> Apache Tomcat -> webapps
 
