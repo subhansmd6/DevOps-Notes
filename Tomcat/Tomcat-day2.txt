@@ -1,0 +1,22 @@
+Accessing Apache Tomcat GUI:
+============================
+1. Navigate to 'Apache Tomcat Home Folder' -> 'conf'.
+2. Modify 'tomcat-users.xml' using a text editor (e.g., 'vi'):
+   --> vi tomcat-users.xml
+  
+3. Add the following user details (ensure lines are uncommented):
+   --> in tomcat-users.xml
+   --> username="admin" password="<new_password>" roles="manager-gui,admin-gui"/
+   
+4. Restart Tomcat and access:
+   
+   --> http://localhost:8080/manager
+
+Deploying from Maven Project:
+=============================
+--> Copy the artifact ('.war' file) from the Maven project's target folder to the Tomcat 'webapps' folder:
+
+--> cp <source> <destination>
+
+- Restart Tomcat to apply the change
+
