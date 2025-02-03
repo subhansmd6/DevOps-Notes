@@ -1,0 +1,82 @@
+JBoss WildFly Deployment Guide:
+===============================
+Jboss is a powerful open source Java application server developed by Redhat.
+Website to download --> Wildfly.org/downloads
+	Port Numbers:
+  --> '9990' → Admin Console
+  --> '8080' → Applications/Artifacts
+
+Folder Structure of WildFly:
+---------------------------
+->domains
+->modules
+->welcome-content
+->docs
+->bin
+->applications
+
+Starting and Stopping JBoss WildFly:
+-----------------------------------
+--> To Start the JBoss Server:
+1. Navigate to the home folder of WildFly.
+2. Go to 'bin' directory.
+3. Run the batch file: `standalone (Windows batch file)`.
+
+--> To Shutdown JBoss Server:
+- Execute the appropriate shutdown command.
+
+Creating a Management Console User:
+-----------------------------------
+1. Navigate to the WildFly home folder --> `bin`
+2. Locate and run the file: `add-user (Windows batch file)`
+3. Follow the on-screen prompts:
+   - Select user type (options: `a` or `b`).
+   - Create a username.
+   - Set a password.
+
+Accessing the WildFly Management Console:
+----------------------------------------
+--> Admin Console: '<URL>:9990'
+--> Requires username and password.
+--> Application Access: '<URL>:8080>/<application-name>'
+
+--> Standalone Folder in WildFly
+The 'standalone' folder contains configuration, deployments, and logs.
+
+--> Configuration: Stores configurations for applications and user specifications.
+(e.g., mgmt-users.properties, mgmt-groups.properties).
+
+--> Logs: Stored in standalone --> logs --> Contains WildFly logs.
+
+--> Deployment: Contains all deployed applications.
+  - Examples: JAR, WAR, EAR, standalone archives such as RAR, or JBoss-specific deployments.
+  - Deployments can be added via 'drag and drop'.
+
+--> Deployment Method:
+-Drag and drop new files to 'add' content or 'replace' existing deployments.
+-If an existing deployment with the same name is found, it will be replaced; otherwise, it will 
+be added as a new deployment.
+
+
+Uploading Deployment Files:
+---------------------------
+
+On the left side of the interface, we can see a "+" symbol where we can upload deployment files.
+
+How to Deploy Artifacts in WildFly?
+1. Copying the WAR file and pasting it into the deployment folder <Web apps> of WildFly.
+   --> Path: 'Home of WildFly --> standalone --> deployments'
+2. Using the Command Line:
+   --> Command: 'cp <artifact source path> <destination of deployments in WildFly>'
+3. Using JBoss WildFly GUI:
+   --> Upload the artifact through the management console.
+
+===> Changing the Port Number in WildFly
+- Modify the port number in the WildFly management console and application configuration.
+
+===> Configuring Master-Slave in WildFly
+- Setup for clustering and master-slave configurations.
+
+===> Shutting Down WildFly Through Folder Structure
+- Locate the shutdown script in the local system.
+
