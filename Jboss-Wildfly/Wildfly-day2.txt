@@ -1,0 +1,57 @@
+Date: 04-02-2025
+
+Things to Keep in Mind Before Changing Configuration Changes:
+--------------------------------------------------------------
+1. Where to change
+2. Backup
+3. How to change
+4. Try to do it in the local system first
+5. Documentation
+
+Snapshot / Backup:
+-----------------
+For WildFly - Configuration:
+- Navigate to the home folder of WildFly
+  - standalone -> configuration -> standalone_xml_history (Folder)
+- File name: Standalone-V1
+
+Example: Port number change
+- Standalone-portchange-V2
+- Need to rename the original file name with another name as per the requirement.
+
+=============================================================================================================================
+
+Different Status of the Artifacts Deployed in WildFly:
+-----------------------------------------------------
+- Deployed: Application is successfully running on the server and is accessible for users.
+- Undeployed: Application has been removed from the server and is not running.
+- Failed: Deployment process encountered an error and the app is not running.
+- Disabled: The application is intentionally stopped by the admin and cannot be accessed until enabled.
+- Suspended: The application is temporarily paused and can be resumed later.
+- Redeploying: The application is currently being updated with new code and is not fully available in this process.
+
+=============================================================================================================================
+
+Domain and Host Controller in WildFly:
+-------------------------------------
+In JBoss WildFly, a "domain controller" is the central management point for a group of servers within a domain, 
+responsible for maintaining the overall configuration and policy. 
+A "host controller" is a separate process running on each server within the domain, communicating with the domain 
+controller to manage the individual server instances on that host machine.
+Essentially, the domain controller dictates the overall configuration, and the host controllers execute those configurations 
+on their respective servers.
+
+=============================================================================================================================
+
+Key Points About Domain and Host Controller:
+-------------------------------------------
+Domain Controller (Master):
+1. Acts as the central management point for the entire domain.
+2. Stores the domain-wide configuration in a file called "domain.xml".
+3. Responsible for distributing configuration changes to all host controllers within the domain.
+
+Host Controller (Slave):
+1. Manages the application server instances running on a specific host.
+2. Reads its configuration from a "host.xml" file specific to that host.
+3. Communicates with the domain controller to receive configuration updates and start/stop server instances.
+
