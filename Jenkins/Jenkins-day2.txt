@@ -1,0 +1,135 @@
+Plugin Installation:
+--------------------
+There are two ways to install plugin one is Automatically and manually.
+
+Automation process of Jenkins Plugins:
+-------------------------------------
+1. Navigate to Manage Jenkins → System Configuration → Plugins
+2. Click on Available Plugins
+3. Search for the required plugin
+4. Select the plugin (Install button will be highlighted)
+5. Click on Install
+
+Manual Process of Plugin Installation:
+-------------------------------------
+1. Navigate to Manage Jenkins → System Configuration → Available Plugins
+2. Search for the required plugin
+3. Click on the desired plugin
+4. It will redirect to another tab
+5. Go to the 'Releases' section for the required plugin
+6. Click on the 'Direct Link' option
+
+Manual Deployment of Downloaded Plugins:
+---------------------------------------
+- When we download a plugin manually, we need to deploy it in Jenkins
+- In Jenkins GUI, go to Plugins → Advanced Settings → Choose File (to upload the plugin from the local system)
+
+Plugin Extensions:
+-----------------
+- Automatic installation: `.jpi` (Jenkins Plugin)
+- Manual installation: `.hpi` (Hudson Plugin)
+
+How to Uninstall Plugins:
+------------------------
+1. Go to Manage Jenkins → Plugins → Installed Plugins
+2. Select the plugin to uninstall
+3. Click on Uninstall
+
+How to Update Plugins:
+---------------------
+1. Go to Manage Jenkins → Plugins → Updates
+2. Select the plugin to update (update button will be highlighted)
+3. Click on Update
+
+Best Practices for Plugin Updates:
+---------------------------------
+- In real-time scenarios, plugins should not be updated directly as they might cause issues.
+- It is recommended to test the plugin update in a local environment before updating in production.
+
+How to Create Users:
+--------------------
+1. Go to "Manage Jenkins" → "Security" → "Users"
+2. Click on "Create User"
+3. Click on the button to give the required details
+4. Click on "Create User"
+
+How to Give Permissions to Users:
+--------------------------------
+1. Go to "Manage Jenkins" → "Security"
+2. View the list of permission tables
+3. Assign required permissions to specific users
+4. Minimum access is "Overall Read"
+5. By default, Jenkins stores created users in its own user database
+6. Suitable for smaller setups with no existing user database elsewhere
+7. Another option is LDAP (Lightweight Directory Access Protocol)
+
+Authorization Strategies:
+------------------------
+1. By default, Jenkins uses "Project-Based Matrix Authorization Strategy"
+2. This allows managing authorization based on available options, such as:
+   - Credentials
+   - Agent
+   - Job
+   - etc.
+
+Matrix Authorization Strategy:
+-----------------------------
+Matrix Authorization allows configuring the lowest level permissions, such as starting new builds, configuring items, 
+or deleting them individually.
+
+Jenkins Projects (Build Jobs):
+----------------------------
+- Free style project: Classic general propose job type that checks steps serially, followed by post builds steps 
+like archieving artifacts and sending emails notification.
+
+- Maven project: Builds a maven project Jenkins tasks advantage of your pom files and drastically reduces the configuration.
+- Pipeline: Orchestrates long running activities that can span multiple build agents suitable for building pipelines
+(formely known as workflows, and/or organizing complex activities that do not easily fit in the free style job type.
+
+- Multi-configuration project: Suitable for projects that need a large number of projects that need a large number of 
+different configurations such as testing or multiple configurations such as testing on multiple environments platform 
+specific builds etc.
+
+- Folder : Creates a container that stores nested items in it useful for grouping things together unlinks view which 
+is just a filter a folder creates a separate namespace so you can have multiple things of the same as long as they are 
+in different folders.
+
+- Multibranch pipeline: Creates a set of pipeline projects according to detected branches in one scm repository.
+
+- Organization Folder : Creates a set of multi-branch project sub-folders by scanning for repositories. 
+
+How to Create a Job or Project in Jenkins GUI:
+----------------------------------------------
+1. Go to Dashboard → Click on 'New Item'
+2. Give the project a name
+3. Select the type of job (item type)
+4. Click on 'OK'
+
+Job Configuration Includes:
+--------------------------
+- General
+- Source Code Management (where we can give the URL of the repository)
+- Build Triggers (define ways to trigger the job)
+- Build Environment
+- Build Steps (where we can add tasks)
+- Post Build Actions
+
+How to Create a Freestyle Job (Basic):
+-------------------------------------
+1. Click on "New Item"
+2. Give the job a name
+3. Select "Freestyle"
+4. Go to the "Build Step" section in the configuration of the job
+5. Click on "Add Build Step" drop-down button
+6. Select "Execute Windows Batch Command"
+7. Type `dir`
+8. Click on "Save"
+9. Click on "Build Now"
+
+Blue Ocean Plugin:
+-----------------
+Blue Ocean rethinks the Jenkins user experience. It is designed from the ground up for Jenkins 
+pipeline and is compatible with freestyle jobs.
+
+
+
