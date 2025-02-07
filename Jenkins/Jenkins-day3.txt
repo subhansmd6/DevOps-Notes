@@ -1,0 +1,106 @@
+Jenkins Password Reset and Key Concepts:
+---------------------------------------
+
+What if a Jenkins user forgets the password?
+-------------------------------------------
+- As a Jenkins administrator, there is a provision to reset the user's credentials.
+- Navigate to: Manage Jenkins → Security → Users
+- Select the user whose password needs to be reset and click on Security.
+- Change the password.
+- Click on 'Save'.
+- As an administrator, once we change the password, we need to inform the user about the updated credentials.
+
+Steps to Change Password by User on Their Own:
+---------------------------------------------
+1. Click on the username.
+2. Go to Security.
+3. Change the password.
+
+**What if a Jenkins Administrator Forgets the Password?**
+
+- (Details not mentioned, but usually requires accessing Jenkins config files or using CLI commands to reset credentials.)
+
+Jenkins Terminologies:
+---------------------
+- Slaves, Nodes, Agents - These three terminologies refer to the same concept in Jenkins.
+
+Jenkins Folders:
+----------------
+- In Windows, all Jenkins information and configuration details are stored under the path: `C:\ProgramData\Jenkins\.Jenkins`
+- Under the `.jenkins` folder:
+  - Users folder: Contains all Jenkins user data.
+  - Workspace: Stores all configured jobs and information.
+  - Secrets: Stores all configured secrets.
+  - Plugins: Contains installed plugins (both manual and automatic installations).
+  - Nodes: Stores all configured nodes.
+  - Logs: Contains logs related to configured slaves and tasks.
+
+Jenkins Configuration Files:
+----------------------------
+- The primary configuration file is `config.xml`.
+- Before modifying `config.xml`, always take a backup.
+- Jenkins logs can be viewed in the GUI:
+  - Navigate to: Manage Jenkins → Status Information → System Log → All Jenkins Logs.
+- Jenkins version can be found:
+  - At the bottom-right corner of the Jenkins GUI.
+  - Manage Jenkins → Status Information → About Jenkins.
+
+**Webhooks in Git:**
+
+- Search and purpose of webhooks in Git (Details not expanded in notes).
+
+Ways to Trigger Jobs in Jenkins GUI (Jenkins Build Triggers):
+------------------------------------------------------------
+- A 'trigger' sets up automated actions that start a build based on specific events like code changes or scheduled times.
+1. Trigger Build Remotely (e.g., from scripts):
+-------------------------------------------------
+- To use this trigger, first generate the authentication token of the job.
+- Enable this option if you would like to trigger new builds by accessing a special predefined URL.
+- You'll need to provide an authorization token in the form of a string, so that only those who know it would be able to 
+  remotely trigger this project's builds.
+- This is most useful when your Jenkins instance grants read access to this job to anonymous users.
+- When that's not the case, Jenkins will reject requests sent to the trigger URL even when the correct token is specified.
+
+Example:
+Use the following URL to trigger a build remotely:
+JENKINS-URL/job/<Job-Name>/build?token=TOKEN_NAME
+orJENKINS-URL/job/<Job-Name>/buildWithParameters?token=TOKEN_NAME
+
+2. Build After Other Projects Are Built (Upstream and Downstream):
+-----------------------------------------------------------------
+- Set up a trigger so that when some other projects finish building, a new build is scheduled for this project.
+- This is convenient for running an extensive test after a build is complete.
+- We need to provide the job name (which is already configured).
+
+--> Under Projects to Watch, We Have 4 Dependencies:
+1. Trigger only if the build is stable.
+2. Trigger even if the build is unstable.
+3. Trigger even if the build fails.
+4. Always trigger even if the build is aborted.
+
+3. Build Periodically (In Schedule):
+-----------------------------------
+- This field follows a syntax of cron (with minor differences).
+- Each line consists of 5 fields, separated by TAB or whitespace.
+
+-->Cron Syntax:
+- MINUTE: Minutes within the hour (0-59)
+- HOUR: The hour of the day (0-23)
+- DOM: The day of the month (1-31)
+- MONTH: The month (1-12)
+- DOW: The day of the week (0-7) where 0 and 7 are Sunday.
+
+To specify multiple values for one field, various operations are available. For reference or practice, visit:
+[crontab.guru](https://crontab.guru)
+
+4. GitHub Hook Trigger for GITSCM Polling:
+------------------------------------------
+- When Jenkins receives a GitHub push hook, the GitHub plugin checks to see whether the hook came from a GitHub 
+  repository that matches the Git repository defined in the 'SCM/Git' section of this job.
+- This option is available only when the GitHub plugin is installed.
+
+5. Poll SCM:
+-----------
+- Configure Jenkins to poll changes in SCM.
+
+Apart from the above triggering ways, we can also trigger jobs manually.
