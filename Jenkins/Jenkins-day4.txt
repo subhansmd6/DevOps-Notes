@@ -46,9 +46,14 @@ Job Scheduling in Jenkins:
 
 ### API, BDD, and TDD
 
-- **What is API?**
-- **What is BDD (Behavior-Driven Development)?**
-- **What is TDD (Test-Driven Development)?**
+- What is API? --> API (Application Programming Interface) is a set of rules and protocols that allow different 
+  software applications to communicate with each other.
+
+- What is TDD (Test-Driven Development)? --> TDD is a software development approach where tests are written before 
+  the actual code.
+
+- What is BDD (Behavior-Driven Development)? --> BDD extends TDD by focusing on the behavior of the system rather 
+  than just unit tests.
 
 ---
 
