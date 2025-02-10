@@ -120,3 +120,8 @@ Replay can also be used as a troubleshooting mechanism.
  - By default, pipeline execution follows a serial mode (one step at a time).
  - A stage only starts after the previous one passes.
 
+--> How to create a new item/job/project from existing jobs?
+ - clicl on 'new item'  --> give the job name
+			--> select the type of project
+			--> scroll down the bottom, where can find 'copy from' option
+			--> In that option, we can give the already existing job name which we want to get 				    configuartions from.
