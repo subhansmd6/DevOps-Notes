@@ -1,0 +1,125 @@
+**Shell Scripting**
+
+**Date: 18-02-2025**
+
+Shell scripting is a series of shell commands arranged in a text file to be executed one after the other.
+
+- Helps to automate a sequence of tasks, creating and also saving time.
+- Can be created using any normal text editor.
+
+### Creating a Shell Script:
+
+1. To get into the shell for execution, use `sudo su` and create a text file. Add the extension `.sh` at the shell:
+ 
+   # vi script.sh
+  
+2. Enter some commands in the script to be executed:
+ 
+   echo "My first script"
+   echo $(date)
+  
+3. Change the permission of the script, give it executable permission, and may also give read and execute 
+   permission for other users:
+  
+   # chmod 755 script.sh
+  
+4. Run the script:
+   
+   # ./script.sh  (or)
+   # bash script.sh
+
+
+### How to Create a File Using Shell Script:
+
+1. Add shebang for the script:
+
+   #! /bin/bash
+ 
+2. Define the directory where the file will be created:
+   
+   DIR="/opt/"
+  
+3. Generate a file name with the current date and time:
+  
+   FILE_NAME="My-file-$(date +"%Y-%m-%d-%H-%M")"
+
+4. Create the file:
+   
+   touch "$DIR/$FILE_NAME"
+   
+5. (Optional) Write something to the file:
+  
+   echo "This file was created on $(date)" > "$DIR/$FILE_NAME"
+  
+
+### Tasks:
+
+1. Create a directory and also a file in that directory using a shell script.
+2. Create `user1`, `user2`, `user3`, `user4`, and `user5` using a shell script.
+3. Create `n` number of users using a file (where the file will have user data).
+4. Print even numbers, odd numbers, and prime numbers using a script.
+
+---
+
+### User Management in Linux:
+
+#### Key Concepts:
+
+- **Users**: Represent individuals who can access the system.
+- **Groups**: Collection of users that share common access permissions.
+- **UID (User ID)** and **GID (Group ID)**: Numeric identities for users and groups.
+
+#### Key Commands:
+
+- **Creating a user with a password:**
+   
+   adduser <username>
+ 
+   Example:
+  
+   adduser user1
+
+- **Creating a user without a password:**
+   
+   useradd -m <username>
+
+   Example:
+  
+   useradd -m user1
+
+#### Task: How to Create a Password for the New User
+
+1. Once we create a user, we can see the user information in `/etc/passwd` (where `passwd` is a file that contains user information).
+2. We can see the passwords of the users in encrypted format in `/etc/shadow` (where `shadow` is a file).
+
+**Task: What is the difference between creating a user using `adduser` and `useradd -m` commands?**
+
+**Deleting a User:**
+
+sudo deluser <username>
+
+(OR)
+
+sudo userdel -r <username>
+--------------------------------------------------------------------------------------------------------------
+
+**How to Connect to a Linux Server Using PuTTY:**
+
+PuTTY is a software package that provides a feature to connect to machines/Linux servers.
+
+To log in to a machine using PuTTY, we need a `.ppk` file (obtained while launching the instance).
+
+**Steps to connect:**
+
+1. Download the `.ppk` file.
+2. Open PuTTY.
+3. Enter the **hostname** or **IP address** of the Linux machine (public IP address).
+4. Navigate to **Connection** → **SSH** → **Auth** → **Credentials**.
+5. Upload the `.ppk` file.
+6. Click on **Open**.
+7. For the first time, click on **Accept** when prompted.
+8. Login as `ubuntu` (default user for Ubuntu servers) or the appropriate username.
+-----
+
+
+
