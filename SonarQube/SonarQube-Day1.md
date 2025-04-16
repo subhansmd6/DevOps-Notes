@@ -8,16 +8,17 @@ A step-by-step guide to installing and configuring SonarQube on a Linux server.
 
 ## 🔍 What is SonarQube?
 
-SonarQube is an open-source platform for continuous inspection of code quality. It performs automatic reviews with static analysis of code to detect:
-
-- Bugs
-- Code Smells
-- Security Vulnerabilities
-- Duplicated Code
-- Complex Code
-- Missing Comments
-
-Supported languages include Java, C, C++, JavaScript, and more. It’s cross-platform and supports various databases like MySQL, PostgreSQL, Oracle, and MSSQL.
+It is an open-source platform for Software quality management tool.
+It will continuously analyze and measures quality of source code.
+It will generate the report (html, Pdf format), if we have any issues.
+It is a web based tool and it supports different languages like Java, C, C++, JavaScript, and more.
+Supports multiple databases like MySQL, PostgreSQL, Oracle, and MSSQL.
+It will identify different types of issues like
+         - Duplicated code
+         - Coding standards
+         - Unit tests
+         - Complex code
+         - Comments
 
 ---
 
