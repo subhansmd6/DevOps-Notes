@@ -8,8 +8,6 @@ A step-by-step guide to installing and configuring SonarQube on a Linux server.
 
 ## 🔍 What is SonarQube?
 
-## 🔍 What is SonarQube?
-
 SonarQube is an open-source platform for **software quality management**. It continuously analyzes and measures the quality of source code, generating detailed reports in **HTML** or **PDF** formats if issues are found.
 
 It is a **web-based tool** and supports multiple programming languages, including:
