@@ -5,8 +5,8 @@
 
 **Linux file system hierarchy --> FHS (File System Hierarchy Standard)**
 
-###- `/` - Root directory
-###- `/home` - Contains personal folder for individual login  
+### `/` - Root directory
+### `/home` - Contains personal folder for individual login  
     - `ls -a` - Lists all files including hidden files
 
 ### `/etc` - Configuration files
