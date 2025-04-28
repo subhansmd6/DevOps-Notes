@@ -41,14 +41,16 @@
   ```
 
 - Change ownership and permissions recursively:
+- There will be two directories: `nexus` and `sonatype-work` in the nexus directory.
+  We should give ownership and permissions to both the directories.
 
   ```bash
   chown -R nexus:nexus nexus
+  chown -R nexus:nexus sonatype-work
   chmod -R 775 nexus
+  chmod -R 775 sonatype-work
   ```
 
-- There will be two directories: `nexus` and `sonatype-work`.  
-  We should give ownership and permissions to both the directories.
 
 - Change to the `bin` directory:
 
