@@ -17,7 +17,7 @@
 ---
 
 ## Pre-requisites
-- 7 GB dedicated RAM
+- 1 GB dedicated RAM
 - Java
 - Default port number: **8081**
 
