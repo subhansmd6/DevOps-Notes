@@ -33,21 +33,22 @@
 
 ## Setup Steps
 
-- Prepare the directory.
+- Change the directory name.
 - Add the user (e.g., `nexus`) using:
   
   ```bash
   useradd nexus
   ```
 
-- Change permissions recursively:
+- Change ownership and permissions recursively:
 
   ```bash
-  chmod -R
+  chown -R nexus:nexus nexus
+  chmod -R 775 nexus
   ```
 
 - There will be two directories: `nexus` and `sonatype-work`.  
-  We should give permissions to both the directories.
+  We should give ownership and permissions to both the directories.
 
 - Change to the `bin` directory:
 
@@ -61,7 +62,7 @@
   vi nexus.rc
   ```
 
-- Add the user name and uncomment it.
+- Add the 'user name' in the first line of the file and uncomment it.
 
 - Create Nexus as a service using the command:
 
@@ -101,7 +102,7 @@
   Password: admin123
   ```
 
-- Get the password from:
+- For latest versions, we can get the password from:
 
   ```
   /opt/sonatype-work/nexus3/admin.password
