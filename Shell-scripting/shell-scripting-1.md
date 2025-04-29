@@ -4,9 +4,9 @@
 
 - ✅ Linux Shell Scripting  
 - ✅ Automate task, system admin  
-- ✅ Run Programs  
-- ✅ Automate repetitive task  
-- ✅ Automate
+- ✅ Runs Programs  
+- ✅ Automates repetitive task  
+- ✅ Automation
 
 ---
 
@@ -47,7 +47,7 @@ var="hello"  # no error
 
 ## Advantages of Loose Typing
 
-1. You write scripts faster  
+1. You can write scripts faster  
 2. More flexibility  
 
 ### Examples:
@@ -71,10 +71,10 @@ echo $x     # prints current date & time
 |--------------------|------------------|--------------------|------------------------|
 | Type declaration   | ❌ Not needed     | ❌ Not needed       | ✅ Must declare type    |
 | Typing style       | Loosely typed    | Dynamically typed  | Statically typed       |
-| Can type change?   | Yes              | Yes                | No (fixed after declare) |
+| Can't change type  | Yes              | Yes                | No (fixed after declare) |
 | Example            | x=5              | x=5                | int x = 5              |
-|                    | x="ui"           | x = "ui"           | x = "5"; ❌ (type mismatch) |
-| Flexibility        | Very highly      | High               | Strict                 |
+|                    | x="4i"           | x = "5i"           | x = "5"; ❌ (type mismatch) |
+| Flexibility        | Very highly      | High               | Stick                  |
 
 ---
 
