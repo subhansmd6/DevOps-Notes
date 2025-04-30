@@ -33,7 +33,7 @@ Set up a secure multi-user Linux environment with the following capabilities:
 ## Creating Directories
 
 ```bash
-mkdir -p /dept/hr /dept/it /dept/sales
+sudo mkdir -p /dept/hr /dept/it /dept/sales
 ```
 
 - This will create directories simultaneously.
