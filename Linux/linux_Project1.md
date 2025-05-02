@@ -56,12 +56,26 @@ sudo groupadd it
 sudo groupadd sales
 ```
 
+## Check whether groups are created or not by using command:
+
+```bash
+getent group
+```
+
 ## Changing Group Ownership for Directories
 
 ```bash
 sudo chown :hr /dept/hr
 sudo chown :it /dept/it
 sudo chown :sales /dept/sales
+```
+
+## Now check whether the groups are assigned by using command:
+
+```bash
+ls ld /dept/hr
+ls -ld /dept/it
+ls -ld /dept/sales
 ```
 
 ## Changing Permissions
