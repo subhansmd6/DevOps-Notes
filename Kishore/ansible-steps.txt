@@ -1,0 +1,109 @@
+you should setup ssh before proceducing with ansible installation
+
+ssh-keygen use these to create ssh key
+
+to view your private and public key you can use below commands:
+sudo cat ~/.ssh/id_rsa
+sudo cat ~/.ssh/id_rsa.pub
+
+In remote machine
+
+create .ssh folder and create a file called authorized_keys 
+
+use below command and add your private key
+
+sudo vi .ssh/authorized_keys  
+
+
+
+
+
+
+step1:
+
+check whether python is installed in your server using 
+
+python3 --version
+
+step2:
+
+sudo apt update 
+
+to update your package in server
+
+step3:
+
+Install software-properties-common package on Ubuntu to enable PPA support, run:
+
+sudo apt -y install software-properties-common
+sudo apt install software-properties-common
+
+step4:
+
+Next add ppa:ansible/ansible to your system’s Software Source:
+
+sudo apt-add-repository ppa:ansible/ansible
+
+step5:
+
+Next, update your repos:
+sudo apt update
+
+step6:
+
+sudo apt install ansible
+
+to install ansible
+
+step7:
+
+ansible --version
+
+check ansible --version
+
+ansible -m ping 172.31.20.192
+
+use your private ip of node machine
+
+to check whether you're able to ping your node machine(remote machine)
+
+
+sudo cat ~/.ssh/id_rsa
+sudo cat ~/.ssh/id_rsa.pub
+
+sudo vi /etc/ansible/hosts
+
+---
+- hosts: all
+  tasks:
+    - name: Print message
+      debug:
+        msg: Hello  World
+		
+		
+vi editor basics
+
+to use below commands you should press shift+:
+
+q! to exit server without making any changes in the content
+
+w !sudo tee % to overwrite the content of the file
+
+wq to save your file in normal condition
+
+press d to delete the content of the file in normal condition not in insert mode
+
+
+sudo apt install firewalld
+
+sudo systemctl enable firewalld
+sudo systemctl start firewalld
+
+sudo firewall-cmd --state
+
+echo "ansible playbook" > /tmp/index.html
+
+
+
+
+
