@@ -1,4 +1,4 @@
-# 🧠 Cleaned & Categorized Interview Questions
+# Interview Questions
 
 ## AWS (Amazon Web Services)
 
