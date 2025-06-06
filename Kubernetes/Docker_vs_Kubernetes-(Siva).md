@@ -26,8 +26,8 @@
 ## Advantages of K8s
 
 1. **Auto Scaling** – Based on demand, container count increases or decreases  
-2. **Self Healing** – Load is distributed to healthy containers  
-3. **Load Balancing** – Crashed containers are replaced automatically  
+2. **Load Balancing** – Load is distributed to healthy containers  
+3. **Self Healing** – Crashed containers are replaced automatically  
 
 ---
 
