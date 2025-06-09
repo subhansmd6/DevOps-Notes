@@ -2,9 +2,9 @@
 
 ## AWS (Amazon Web Services)
 
-1 Benefits of a private subnet over a public subnet?
-2 Can I work with private subnets?
-3 Can we retrieve data from S3 anytime?
+- Benefits of a private subnet over a public subnet?
+- Can I work with private subnets?
+- Can we retrieve data from S3 anytime?
 - Client wants to connect to an S3 bucket from EC2 without credentials. How do you do that?
 - Customer wants to connect outside VPC — how is this possible?
 - Difference between NACL & Subnet?
