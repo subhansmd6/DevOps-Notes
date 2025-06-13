@@ -84,23 +84,50 @@ You're running a food delivery app:
 
 set -e
 
-echo "📦 Updating system..."
-sudo apt update -y
-sudo apt upgrade -y
+echo "=== Install prerequisites ==="
+sudo apt-get update
+sudo apt-get install -y \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
 
-echo "🐳 Installing Docker..."
-sudo apt install -y ca-certificates curl gnupg lsb-release
+echo "=== Add Docker’s official GPG key ==="
 sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-sudo apt update -y
-sudo apt install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sudo usermod -aG docker $USER
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | \
+  sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 
-echo "✅ Docker installed."
+echo "=== Add Docker APT repository ==="
+echo \
+  "deb [arch=$(dpkg --print-architecture) \
+  signed-by=/etc/apt/keyrings/docker.gpg] \
+  https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+echo "=== Update package index again ==="
+sudo apt-get update
+
+echo "=== Install Docker ==="
+sudo apt-get install -y \
+    docker-ce \
+    docker-ce-cli \
+    containerd.io \
+    docker-buildx-plugin \
+    docker-compose-plugin
+
+
+sudo usermod -aG docker $USER && sg docker newgrp `id -gn`
+
+echo "=== Start and enable Docker ==="
+sudo systemctl enable docker
+sudo systemctl start docker
+
+echo "✅ Docker installation completed."
+
 
 echo "🔧 Installing kubectl..."
-curl -LO "https://dl.k8s.io/release/$(curl -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+curl -LO "https://dl.k8s.io/release/$(curl -Ls https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
 
